@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="全球领先的中文搜索引擎。超千亿的中文网页数据库，可以瞬间找到相关的搜索结果。">
+        <title>百度首页</title>
+        <link rel="stylesheet" href="./baidu.css">
+        <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    </head>
+
+    <body>
+        <!-- 顶部导航栏 -->
+        <div id="top_nav">
+            <div class="option">
+                <a href="#" target="_self">hao123</a>
+                <a href="#" target="_self">地图</a>
+                <a href="#" target="_self">贴吧</a>
+                <a href="#" target="_self">视频</a>
+                <a href="#" target="_self">图片</a>
+                <a href="#" target="_self">网盘</a>
+                <a href="#" target="_self">更多</a>
+            </div>
+
+            <div class="user">
+                <a href="#" target="_parent">设置</a>
+                <img src="./images/mk.JPG" alt="" srcset="" class="avatar" draggable="false">
+                <a>美猴王</a>
+            </div>
+        </div>
+
+        <!-- 主体内容区 -->
+        <div id="main">
+            <div class="logo">
+                <img src="./images/baidu-logo.png" draggable="false" alt="" srcset="">
+            </div>
+            <div class="search">
+                <input type="search" name="" id="" autofocus>
+                <input type="submit" value="百度一下">
+
+                <div class="box">
+                    <hr>
+                    <a href="#">高高在下</a>
+                    <a href="#">天外有天</a>
+                    <a href="#">把酒狂歌</a>
+                    <a href="#">西游记</a>
+                    <a href="#">只爱西经</a>
+                    <a href="#">取一念</a>
+                    <a href="#">法术乌魔多</a>
+                </div>
+            </div>
+
+
+            <div class="hot_news">
+                <div class="hot_title">
+                    <a href="#">百度热搜 &#187;</a>
+                    <a>&#10227; 换一换</a>
+                </div>
+                <ol>
+                    <li><a>中国空间站第三棒全力开跑</a></li>
+                    <li><a>D2809列车长与司机最后通话曝光</a></li>
+                    <li><a>直击2022高考，为考生加油！</a></li>
+                    <li><a>教育部：不准强迫毕业生签就业协议</a></li>
+                    <li><a>元宇宙🌌</a></li>
+                    <li><a>web3</a></li>
+                    <li><a>低代码平台</a></li>
+                    <li><a>小程序</a></li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- 底部区域 -->
+        <div id="link_area">
+            <a href="#" target="_self">关于百度</a>
+            <a href="#" target="_self">京公网安备11000002000001号</a>
+            <a href="#" target="_self">京ICP证030173号</a>
+            <span>药品医疗器械网络信息服务备案（京）网药械信息备字（2021）第00159号</span>
+            <span>医疗器械网络交易服务第三方平台备案凭证（京）网械平台备字（2020）第00002号</span>
+        </div>
+
+
+        <script>
+            // 获取元素
+            const searchInput = document.querySelector('input[type=search]')
+            const displayBox = document.querySelector('.box')
+            let val = ''
+            // 封装共用函数体
+            function changeStyle() {
+                val = searchInput.value
+                if (!val.trim()) {
+                    displayBox.style.display = 'none'
+                    return
+                } else {
+                    displayBox.style.display = 'block'
+                }
+            }
+
+            // 监听输入
+            searchInput.oninput = () => {
+                changeStyle()
+            }
+
+            // 输入框聚焦
+            searchInput.onfocus = () => {
+                changeStyle()
+            }
+
+            // 输入框失去焦点
+            searchInput.onblur = () => {
+                displayBox.style.display = 'none'
+            }
+        </script>
+    </body>
+
+</html>
